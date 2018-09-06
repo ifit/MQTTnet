@@ -100,9 +100,6 @@ namespace MQTTnet.Client
                 if (IsConnected && !_cancellationTokenSource.IsCancellationRequested)
                 {
                     await SendAsync(new MqttDisconnectPacket(), _cancellationTokenSource.Token).ConfigureAwait(false);
-					if (_adapter != null) {
-						await _adapter.DisconnectAsync (_options.CommunicationTimeout, CancellationToken.None).ConfigureAwait (false);
-					}
                 }
             }
             finally

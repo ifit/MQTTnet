@@ -23,7 +23,11 @@ namespace MQTTnet.Implementations
 
                 case MqttClientWebSocketOptions webSocketOptions:
                     {
-                        return new MqttChannelAdapter(new MqttWebSocketChannel(webSocketOptions), serializer, logger);
+						if (webSocketOptions.MonoSpecificHandling) {
+							return new MqttChannelAdapter (new MqttMonoWebSocketChannel (webSocketOptions), serializer, logger);
+						} else {
+							return new MqttChannelAdapter (new MqttWebSocketChannel (webSocketOptions), serializer, logger);
+						}
                     }
 
                 default:

@@ -15,6 +15,8 @@ namespace MQTTnet.Client
 
         public MqttClientTlsOptions TlsOptions { get; set; } = new MqttClientTlsOptions();
 
+		public bool MonoSpecificHandling { get; set; } = false;
+
         public override string ToString()
         {
             return Uri;
