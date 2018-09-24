@@ -63,4 +63,7 @@
   <ItemGroup Condition="'$(TargetFramework)'=='net461'">
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
 </Project>
